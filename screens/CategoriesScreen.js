@@ -3,17 +3,27 @@ import { FlatList } from "react-native";
 
 import CategoryGrid from "../components/CategoryGrid";
 
-function renderCategoryItem({ item }) {
-  return <CategoryGrid title={item.title} color={item.color} />;
-}
+function CategoriesScreen({ navigation }) {
+  function renderCategoryItem({ item }) {
+    function pressHandler() {
+      navigation.navigate("Meals");
+    }
+    return (
+      <CategoryGrid
+        title={item.title}
+        color={item.color}
+        onPress={pressHandler}
+      />
+    );
+  }
 
-function CategoriesScreen() {
   return (
     <FlatList
       data={CATEGORIES}
       renderItem={renderCategoryItem}
       keyExtractor={(item) => item.id}
-    ></FlatList>
+      numColumns={2}
+    />
   );
 }
 
