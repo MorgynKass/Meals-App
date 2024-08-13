@@ -38,17 +38,37 @@ export default function App() {
     return null;
   }
   return (
-    <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen name="Meal Categories" component={CategoriesScreen} />
-        <Stack.Screen name="Meals" component={MealsScreen} />
-      </Stack.Navigator>
-    </NavigationContainer>
+    <>
+      <NavigationContainer theme={{ colors: { background: "#F5EFE6" } }}>
+        <Stack.Navigator
+          screenOptions={{
+            headerStyle: { backgroundColor: "#4F6F52" },
+            headerTintColor: "#F5EFE6",
+          }}
+        >
+          <Stack.Screen
+            name="MealCategories"
+            component={CategoriesScreen}
+            options={{
+              title: "All Categories",
+            }}
+          />
+          <Stack.Screen
+            name="Meals"
+            component={MealsScreen}
+            options={{
+              title: "Meals",
+            }}
+          />
+        </Stack.Navigator>
+      </NavigationContainer>
+    </>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: "#F5EFE6",
   },
 });

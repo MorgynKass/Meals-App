@@ -31,7 +31,7 @@ const styles = StyleSheet.create({
     shadowRadius: 8,
 
     // style testing
-    backgroundColor: "white",
+    backgroundColor: "#F5EFE6",
   },
   pressable: {
     flex: 1,
