@@ -1,4 +1,4 @@
-import { StyleSheet } from "react-native";
+import { StyleSheet, StatusBar } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import {
@@ -11,6 +11,7 @@ import { useEffect } from "react";
 
 import CategoriesScreen from "./screens/CategoriesScreen";
 import MealsScreen from "./screens/MealsScreen.js";
+import SingleMealScreen from "./screens/SingleMealScreen.js";
 
 const Stack = createNativeStackNavigator();
 
@@ -39,11 +40,16 @@ export default function App() {
   }
   return (
     <>
+      <StatusBar barStyle={"light-content"} />
       <NavigationContainer theme={{ colors: { background: "#F5EFE6" } }}>
         <Stack.Navigator
           screenOptions={{
             headerStyle: { backgroundColor: "#4F6F52" },
             headerTintColor: "#F5EFE6",
+            headerBackTitleStyle: {
+              fontFamily: "Montserrat_400Regular",
+              fontSize: 18,
+            },
           }}
         >
           <Stack.Screen
@@ -51,13 +57,28 @@ export default function App() {
             component={CategoriesScreen}
             options={{
               title: "All Categories",
+              headerTitleStyle: {
+                fontFamily: "Montserrat_700Bold",
+              },
             }}
           />
           <Stack.Screen
             name="Meals"
             component={MealsScreen}
             options={{
-              title: "Meals",
+              headerTitleStyle: {
+                fontFamily: "Montserrat_700Bold",
+              },
+            }}
+          />
+          <Stack.Screen
+            name="SingleMeal"
+            component={SingleMealScreen}
+            options={{
+              title: "Meal Information",
+              headerTitleStyle: {
+                fontFamily: "Montserrat_700Bold",
+              },
             }}
           />
         </Stack.Navigator>
