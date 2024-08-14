@@ -8,6 +8,8 @@ import {
   Platform,
 } from "react-native";
 
+import MealInfo from "./MealInfo";
+
 function MealItem({
   id,
   title,
@@ -28,21 +30,13 @@ function MealItem({
         style={({ pressed }) => (pressed ? styles.pressed : null)}
         onPress={MealItemHandler}
       >
-        <View style={styles.mealInnerContainer}>
-          <View>
-            <Image style={styles.image} source={{ uri: imageUrl }} />
-          </View>
-          <Text style={styles.title}>{title}</Text>
-          <View style={styles.mealInfo}>
-            <Text style={styles.mealText}>Time: {duration} mins</Text>
-            <Text style={styles.mealText}>
-              Difficulty: {complexity.toUpperCase()}
-            </Text>
-            <Text style={styles.mealText}>
-              Affordability: {affordability.toUpperCase()}
-            </Text>
-          </View>
-        </View>
+        <MealInfo
+          title={title}
+          imageUrl={imageUrl}
+          duration={duration}
+          complexity={complexity}
+          affordability={affordability}
+        />
       </Pressable>
     </View>
   );
@@ -65,30 +59,6 @@ const styles = StyleSheet.create({
   },
   pressed: {
     opacity: 0.5,
-  },
-  mealInnerContainer: {
-    borderRadius: 8,
-    overflow: "hidden",
-  },
-  image: {
-    width: "100%",
-    height: 200,
-  },
-  title: {
-    marginTop: 5,
-    fontWeight: "bold",
-    textAlign: "center",
-    fontSize: 18,
-    fontFamily: "Montserrat_700Bold",
-  },
-  mealInfo: {
-    margin: 5,
-    justifyContent: "center",
-    alignItems: "center",
-  },
-  mealText: {
-    marginVertical: 5,
-    fontFamily: "Montserrat_400Regular",
   },
 });
 

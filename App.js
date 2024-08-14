@@ -45,10 +45,10 @@ export default function App() {
         <Stack.Navigator
           screenOptions={{
             headerStyle: { backgroundColor: "#4F6F52" },
-            headerTintColor: "#F5EFE6",
+            headerTintColor: "white",
             headerBackTitleStyle: {
               fontFamily: "Montserrat_400Regular",
-              fontSize: 18,
+              fontSize: 17,
             },
           }}
         >
@@ -59,6 +59,7 @@ export default function App() {
               title: "All Categories",
               headerTitleStyle: {
                 fontFamily: "Montserrat_700Bold",
+                fontSize: 15,
               },
             }}
           />
