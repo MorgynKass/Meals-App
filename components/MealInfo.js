@@ -3,7 +3,7 @@ import { View, Text, StyleSheet, Image } from "react-native";
 function MealInfo({ imageUrl, title, duration, complexity, affordability }) {
   return (
     <View style={styles.container}>
-      <View>
+      <View style={styles.imageContainer}>
         <Image style={styles.image} source={{ uri: imageUrl }} />
       </View>
       <Text style={styles.title}>{title}</Text>
@@ -27,12 +27,17 @@ const styles = StyleSheet.create({
     alignItems: "center",
     backgroundColor: "white",
   },
+  imageContainer: {
+    width: "100%",
+    alignItems: "center",
+    backgroundColor: "#4f6f52c3",
+  },
   image: {
     width: 260,
     height: 260,
     margin: 15,
-    borderWidth: 4,
-    borderColor: "#1A4D2E",
+    borderWidth: 5,
+    borderColor: "white",
     borderRadius: 150,
   },
   title: {

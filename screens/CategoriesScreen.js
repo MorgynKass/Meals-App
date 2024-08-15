@@ -13,8 +13,8 @@ function CategoriesScreen({ navigation }) {
     return (
       <CategoryGrid
         title={item.title}
-        color={item.color}
         onPress={pressHandler}
+        imageUrl={item.imageUrl}
       />
     );
   }

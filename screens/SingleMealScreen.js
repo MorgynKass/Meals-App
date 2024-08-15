@@ -70,6 +70,7 @@ const styles = StyleSheet.create({
   },
   text: {
     fontSize: 19,
+    fontFamily: "Montserrat_400Regular",
   },
 });
 
